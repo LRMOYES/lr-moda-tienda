@@ -1,37 +1,41 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html><html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LR Moda y Estilo</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css" />  <!-- Fuente: Dancing Script -->  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">  <!-- Íconos: Font Awesome -->  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
   <header>
     <div class="logo">
       <img src="LOGO.png" alt="Logo LR Moda y Estilo" />
+      <h1>LR Moda y Estilo</h1>
     </div>
     <nav>
       <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Mujer</a></li>
-        <li><a href="#">Deportivo</a></li>
-        <li><a href="#">Contacto</a></li>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#productos">Nuestros Productos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#carrito" class="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
       </ul>
     </nav>
-    <h1>LR Moda y Estilo</h1>
-  </header>
-
-  <main>
-    <h2>Nuestros Productos</h2>
-    <div id="product-container" class="product-container"></div>
-    <div class="cart">
-      <h3>Carrito de Compras</h3>
-      <ul id="cart-items"></ul>
-      <p>Total: $<span id="cart-total">0</span></p>
-    </div>
-  </main>
-
-  <script src="script.js"></script>
+  </header>  <main>
+    <section id="productos">
+      <h2>Nuestros Productos</h2>
+      <div class="producto">
+        <img src="ropa1.jpg" alt="Producto 1">
+        <h3>Conjunto Deportivo</h3>
+        <p>$29.99</p>
+        <!-- Botón de PayPal (debes reemplazar tu correo) -->
+        <form action="https://www.paypal.com/donate" method="post" target="_blank">
+          <input type="hidden" name="business" value="TUCORREO@GMAIL.COM" />
+          <input type="hidden" name="currency_code" value="USD" />
+          <input type="submit" value="Comprar con PayPal" />
+        </form>
+      </div>
+    </section>
+  </main>  <footer>
+    <p>&copy; 2025 LR Moda y Estilo - Todos los derechos reservados</p>
+  </footer>
 </body>
 </html>
