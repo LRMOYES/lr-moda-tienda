@@ -1,41 +1,47 @@
 <!DOCTYPE html><html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LR Moda y Estilo</title>
-  <link rel="stylesheet" href="style.css" />  <!-- Fuente: Dancing Script -->  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">  <!-- Íconos: Font Awesome -->  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<body>
-  <header>
+<body>  <!-- Encabezado -->  <header>
     <div class="logo">
-      <img src="LOGO.png" alt="Logo LR Moda y Estilo" />
+      <img src="LOGO.png" alt="Logo LR Moda">
       <h1>LR Moda y Estilo</h1>
     </div>
     <nav>
       <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#productos">Nuestros Productos</a></li>
+        <li><a href="#nuevos">Nuevos</a></li>
+        <li><a href="#tienda">Tienda</a></li>
+        <li><a href="#tendencias">Tendencias</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
         <li><a href="#contacto">Contacto</a></li>
-        <li><a href="#carrito" class="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
       </ul>
     </nav>
-  </header>  <main>
-    <section id="productos">
-      <h2>Nuestros Productos</h2>
-      <div class="producto">
-        <img src="ropa1.jpg" alt="Producto 1">
-        <h3>Conjunto Deportivo</h3>
-        <p>$29.99</p>
-        <!-- Botón de PayPal (debes reemplazar tu correo) -->
-        <form action="https://www.paypal.com/donate" method="post" target="_blank">
-          <input type="hidden" name="business" value="TUCORREO@GMAIL.COM" />
-          <input type="hidden" name="currency_code" value="USD" />
-          <input type="submit" value="Comprar con PayPal" />
-        </form>
-      </div>
-    </section>
-  </main>  <footer>
-    <p>&copy; 2025 LR Moda y Estilo - Todos los derechos reservados</p>
-  </footer>
-</body>
+    <div>
+      <a href="#carrito" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+    </div>
+  </header>  <!-- Banner principal -->  <section id="banner">
+    <h2>Descubre tu estilo con LR Moda</h2>
+    <p>Moda femenina, deportiva y unisex</p>
+  </section>  <!-- Productos destacados -->  <section id="productos">
+    <h2>Nuevos Productos</h2>
+    <div class="producto">
+      <img src="blusa1.jpg" alt="Blusa elegante">
+      <h3>Blusa Rosa Elegante</h3>
+      <p>$34.99</p>
+      <form action="https://www.paypal.com/donate" method="post" target="_blank">
+        <input type="hidden" name="business" value="tucorreo@ejemplo.com">
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="submit" value="Comprar con PayPal">
+      </form>
+    </div>
+  </section>  <!-- Pie de página -->  <footer>
+    <p>&copy; 2025 LR Moda y Estilo. Todos los derechos reservados.</p>
+  </footer></body>
 </html>
