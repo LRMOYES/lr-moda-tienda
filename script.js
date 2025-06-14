@@ -27,3 +27,41 @@ function addToCart(price) {
   total += price;
   cartTotal.textContent = total.toFixed(2);
 }
+
+<script>
+  let carrito = [];
+  const listaCarrito = document.getElementById("lista-carrito");
+  const totalElement = document.getElementById("total");
+
+  document.querySelectorAll(".agregar-carrito").forEach(btn => {
+    btn.addEventListener("click", function () {
+      const producto = this.closest(".producto");
+      const nombre = producto.querySelector("h3").innerText;
+      const precio = parseFloat(producto.querySelector("p:nth-of-type(2)").innerText.replace("Precio: $", ""));
+      carrito.push({ nombre, precio });
+      actualizarCarrito();
+    });
+  });
+
+  function actualizarCarrito() {
+    listaCarrito.innerHTML = "";
+    let total = 0;
+    carrito.forEach((item, index) => {
+      total += item.precio;
+      const li = document.createElement("li");
+      li.innerHTML = ${item.nombre} - $${item.precio.toFixed(2)} <button onclick="eliminarDelCarrito(${index})">Eliminar</button>;
+      listaCarrito.appendChild(li);
+    });
+    totalElement.innerText = total.toFixed(2);
+  }
+
+  function eliminarDelCarrito(indice) {
+    carrito.splice(indice, 1);
+    actualizarCarrito();
+  }
+
+  function vaciarCarrito() {
+    carrito = [];
+    actualizarCarrito();
+  }
+</script>
