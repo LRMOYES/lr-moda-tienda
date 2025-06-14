@@ -188,5 +188,12 @@
       indice = (indice - 1 + imagenes.length) % imagenes.length;
       mostrarImagen(indice);
     };
-  </script></body>
+  </script>
+  <div id="carrito" class="carrito">
+  <h2>Carrito de Compras</h2>
+  <ul id="lista-carrito"></ul>
+  <p>Total: $<span id="total">0.00</span></p>
+  <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+</div>
+</body>
 </html>
