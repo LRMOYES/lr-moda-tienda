@@ -1,193 +1,39 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LR Moda y Estilo</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet" />
-</head>
-  <div class="modal" id="modal-img">
-  <img id="img-expandida" src="" alt="Imagen ampliada">
-</div>
-
-<script>
-  const productos = document.querySelectorAll('.producto img');
-  const modal = document.getElementById('modal-img');
-  const imgExpandida = document.getElementById('img-expandida');
-
-  productos.forEach(img => {
-    img.addEventListener('click', () => {
-      imgExpandida.src = img.src;
-      modal.classList.add('active');
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => {
+        document.getElementById("pantalla-bienvenida").style.display = "none";
+        document.getElementById("contenido").style.display = "block";
+      }, 10000); // 10 segundos
     });
-  });
-
-  modal.addEventListener('click', () => {
-    modal.classList.remove('active');
-  });
-</script>
-<body>  <header>
-  <div class="logo-contenedor">
-    <img src="LOGO.png" alt="Logo de LR Moda y Estilo" class="logo-img" />
-    <h1>LR Moda y Estilo</h1>
-  </div>
-</header> <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#productos">Productos</a>
-    <a href="#nosotros">Quiénes somos</a>
-    <a href="#contacto">Contacto</a>
-  </nav>  <section class="carrusel" id="inicio">
-    <div class="carousel">
-      <img src="imagenes/carrusel1.png" alt="Carrusel 1" class="active">
-      <img src="imagenes/carrusel2.png" alt="Carrusel 2">
-      <img src="imagenes/carrusel3.png" alt="Carrusel 3">
-      <button class="prev">&#10094;</button>
-      <button class="next">&#10095;</button>
-    </div>
-  </section>  <section class="productos" id="productos">
-    <h2>Nuestros Productos</h2>
-    <div class="grid-productos"><div class="producto">
-    <img src="imagenes/falda-short-tela-crepe.png" alt="Falda Shorts Crepé" onclick="expandirImagen(this)">
-    <div class="producto-info">
-      <h3>Falda Shorts – Tela Crepé</h3>
-      <p>Categoría: Mujer Casual</p>
-      <p>Precio: $6.00</p>
-      <button class="agregar-carrito">Agregar al carrito</button>
-    </div>
+  </script>
+</head>
+<body>
+  <div id="pantalla-bienvenida">
+    <img src="imagenes/bienvenida.png" alt="Bienvenida" style="width: 100vw; height: 100vh; object-fit: cover;" />
   </div>
 
-  <div class="producto">
-    <img src="imagenes/shorts-tela-crepe.png" alt="Shorts Crepé" onclick="expandirImagen(this)">
-    <div class="producto-info">
-      <h3>Shorts – Tela Crepé</h3>
-      <p>Categoría: Mujer Casual</p>
-      <p>Precio: $5.00</p>
-      <button class="agregar-carrito">Agregar al carrito</button>
-    </div>
+  <div id="contenido" style="display: none;">
+    <header>
+      <h1>LR Moda y Estilo</h1>
+    </header>
+
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="quienes-somos.html">Quiénes somos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <section class="carrusel">
+      <img src="imagenes/carrusel1.png" alt="Imagen destacada" />
+    </section>
   </div>
-
-  <div class="producto">
-    <img src="imagenes/falda-shorts-cintura-alta.png" alt="Falda Shorts Cintura Alta" onclick="expandirImagen(this)">
-    <div class="producto-info">
-      <h3>Falda Shorts – Cintura Alta</h3>
-      <p>Categoría: Mujer Line Sexy</p>
-      <p>Precio: $18.00</p>
-      <button class="agregar-carrito">Agregar al carrito</button>
-    </div>
-  </div>
-
-  <div class="producto">
-    <img src="imagenes/shorts-tela-lino.png" alt="Shorts Lino" onclick="expandirImagen(this)">
-    <div class="producto-info">
-      <h3>Shorts – Tela Lino</h3>
-      <p>Categoría: Mujer Line Sexy</p>
-      <p>Precio: $20.00</p>
-      <button class="agregar-carrito">Agregar al carrito</button>
-    </div>
-  </div>
-
-  <div class="producto">
-    <img src="imagenes/shorts-cintura-baja.png" alt="Shorts Cintura Baja" onclick="expandirImagen(this)">
-    <div class="producto-info">
-      <h3>Shorts – Cintura Baja</h3>
-      <p>Categoría: Mujer Casual</p>
-      <p>Precio: $4.50</p>
-      <button class="agregar-carrito">Agregar al carrito</button>
-    </div>
-  </div>
-
-  <div class="producto">
-    <img src="imagenes/shorts-bolsillo-ancho.png" alt="Shorts Bolsillo Ancho" onclick="expandirImagen(this)">
-    <div class="producto-info">
-      <h3>Shorts – Bolsillo Ancho</h3>
-      <p>Categoría: Mujer Casual</p>
-      <p>Precio: $12.00</p>
-      <button class="agregar-carrito">Agregar al carrito</button>
-    </div>
-  </div>
-
-  <div class="producto">
-    <img src="imagenes/shorts-estilo-cargo.png" alt="Shorts Cargo" onclick="expandirImagen(this)">
-    <div class="producto-info">
-      <h3>Shorts – Estilo Cargo</h3>
-      <p>Categoría: Mujer Line Sexy</p>
-      <p>Precio: $12.00</p>
-      <button class="agregar-carrito">Agregar al carrito</button>
-    </div>
-  </div>
-
-  <div class="producto">
-    <img src="imagenes/shorts-de-vestir.png" alt="Shorts de Vestir" onclick="expandirImagen(this)">
-    <div class="producto-info">
-      <h3>Shorts de Vestir</h3>
-      <p>Categoría: Mujer Casual</p>
-      <p>Precio: $12.00</p>
-      <button class="agregar-carrito">Agregar al carrito</button>
-    </div>
-  </div>
-
-  <div class="producto">
-    <img src="imagenes/shorts-estilo-love.png" alt="Shorts Love" onclick="expandirImagen(this)">
-    <div class="producto-info">
-      <h3>Shorts – Estilo Love</h3>
-      <p>Categoría: Mujer Casual</p>
-      <p>Precio: $10.00</p>
-      <button class="agregar-carrito">Agregar al carrito</button>
-    </div>
-  </div>
-
-</div>
-
-  <section id="nosotros" class="quienes-somos">
-  <h2>Bienvenidas a <span class="resaltado">LR - Moda y Maquillaje</span></h2>
-  <p>
-    Somos una tienda de moda, maquillaje y accesorios para mujeres fundada en 2025 por <strong>Lissette Ramírez</strong>. Enfocadas en brindar a nuestras clientas los mejores productos y servicios para que se sientan seguras y hermosas. En LR, buscamos ofrecer tendencias actuales y estilos únicos que se adapten a las necesidades y gustos de cada mujer. Nuestro objetivo es hacer que cada una de nuestras clientas se sienta especial y única.
-  </p>
-
-  <h3>Nuestra historia</h3>
-  <p>
-    Nuestra historia comenzó en 2025, cuando <strong>Lissette Ramírez</strong> decidió crear un espacio donde las mujeres pudieran encontrar todo lo que necesitan para sentirse únicas. Con una pasión por la moda y el maquillaje, Lissette se propuso crear una tienda que fuera más que un lugar para comprar productos, un espacio donde las mujeres pudieran encontrar inspiración y confianza.
-  </p>
-
-  <h3>Nuestra visión</h3>
-  <p>
-    Nos visualizamos en ser líderes en la industria de la moda y el maquillaje, ofreciendo productos y servicios de alta calidad que satisfagan las necesidades de nuestras clientas. Queremos ser el destino preferido de las mujeres que buscan estilo, elegancia y confianza.
-  </p>
-</section>
-    <h2>Nuestra Empresa</h2>
-    <p>
-      En LR Moda y Estilo ofrecemos prendas cuidadosamente seleccionadas para resaltar la elegancia y belleza femenina. Nos enfocamos en calidad, estilo y comodidad para acompañar a nuestras clientas en su día a día y ocasiones especiales.
-    </p>
-  </section>  <div id="modal" class="modal" onclick="cerrarImagen()">
-    <span class="cerrar">&times;</span>
-    <img class="modal-contenido" id="imgModal">
-  </div>  <script>
-    function expandirImagen(img) {
-      const modal = document.getElementById("modal");
-      const modalImg = document.getElementById("imgModal");
-      modal.style.display = "block";
-      modalImg.src = img.src;
-    }
-    function cerrarImagen() {
-      document.getElementById("modal").style.display = "none";
-    }
-
-    let indice = 0;
-    const imagenes = document.querySelectorAll(".carousel img");
-    const mostrarImagen = (n) => {
-      imagenes.forEach(img => img.classList.remove("active"));
-      imagenes[n].classList.add("active");
-    };
-    document.querySelector(".next").onclick = () => {
-      indice = (indice + 1) % imagenes.length;
-      mostrarImagen(indice);
-    };
-    document.querySelector(".prev").onclick = () => {
-      indice = (indice - 1 + imagenes.length) % imagenes.length;
-      mostrarImagen(indice);
-    };
-  </script></body>
+</body>
 </html>
-
