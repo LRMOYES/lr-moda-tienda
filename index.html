@@ -5,73 +5,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LR Moda y Estilo</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
   <!-- Pantalla de bienvenida -->
-  <div id="pantalla-bienvenida" class="pantalla-bienvenida">
+  <div id="pantalla-bienvenida">
     <img src="imagenes/bienvenida.png" alt="Bienvenida" />
-    <button onclick="entrarSitio()">Entrar</button>
+    <button onclick="cerrarBienvenida()">Entrar</button>
   </div>
 
-  <!-- Contenido principal -->
-  <div id="contenido-sitio" class="oculto">
+  <!-- Fondo -->
+  <div class="fondo"></div>
 
-    <header>
-      <div class="logo-contenedor">
-        <img src="LOGO.png" alt="Logo de LR Moda y Estilo" class="logo-img" />
-        <h1>LR Moda y Estilo</h1>
-      </div>
-    </header>
-
-    <nav>
-      <a onclick="mostrarSeccion('inicio')">Inicio</a>
-      <a onclick="mostrarSeccion('productos')">Productos</a>
-      <a onclick="mostrarSeccion('nosotros')">Quiénes somos</a>
-      <a onclick="mostrarSeccion('contacto')">Contacto</a>
-      <a onclick="mostrarSeccion('mujer-afro')">Mujer Afro</a>
-    </nav>
-
-    <section id="inicio" class="seccion">
-      <div class="carousel">
-        <img src="imagenes/carrusel1.png" alt="Carrusel 1" class="active">
-        <img src="imagenes/carrusel2.png" alt="Carrusel 2">
-        <img src="imagenes/carrusel3.png" alt="Carrusel 3">
-        <button class="prev">&#10094;</button>
-        <button class="next">&#10095;</button>
-      </div>
-    </section>
-
-    <section id="productos" class="seccion oculto">
-      <!-- Aquí va todo el contenido de tus productos -->
-      <!-- Copiar tu bloque de productos aquí -->
-    </section>
-
-    <section id="nosotros" class="seccion oculto">
-      <!-- Aquí va todo tu contenido de "Quiénes somos" -->
-      <!-- Copiar tu bloque de nosotros aquí -->
-    </section>
-
-    <section id="contacto" class="seccion oculto">
-      <h2>Contacto</h2>
-      <p>Puedes contactarnos en nuestras redes sociales o vía WhatsApp.</p>
-    </section>
-
-    <section id="mujer-afro" class="seccion oculto">
-      <h2>Mujer Afro</h2>
-      <p>Próximamente productos especiales de nuestra línea Afro.</p>
-    </section>
-
-    <div id="carrito" class="carrito">
-      <h2>Carrito de Compras</h2>
-      <ul id="lista-carrito"></ul>
-      <p>Total: $<span id="total">0.00</span></p>
-      <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+  <!-- Encabezado y navegación -->
+  <header>
+    <div class="logo-contenedor">
+      <img src="LOGO.png" alt="Logo de LR Moda y Estilo" class="logo-img" />
+      <h1>LR Moda y Estilo</h1>
     </div>
+  </header>
 
+  <nav>
+    <a href="#inicio" onclick="mostrarSeccion('inicio')">Inicio</a>
+    <a href="#productos" onclick="mostrarSeccion('productos')">Productos</a>
+    <a href="#nosotros" onclick="mostrarSeccion('nosotros')">Quiénes somos</a>
+    <a href="#mujer-afro" onclick="mostrarSeccion('mujer-afro')">Mujer Afro</a>
+    <a href="#contacto" onclick="mostrarSeccion('contacto')">Contacto</a>
+  </nav>
+
+  <!-- Sección: Inicio -->
+  <section id="inicio" class="seccion">
+    <div class="carousel">
+      <img src="imagenes/carrusel1.png" class="active" alt="Carrusel 1">
+      <img src="imagenes/carrusel2.png" alt="Carrusel 2">
+      <img src="imagenes/carrusel3.png" alt="Carrusel 3">
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- Sección: Productos -->
+  <section id="productos" class="seccion oculto">
+    <h2>Nuestros Productos</h2>
+    <div class="grid-productos">
+      <!-- Repite este bloque para más productos -->
+      <div class="producto">
+        <img src="imagenes/falda-short-tela-crepe.png" alt="Falda Shorts Crepé" onclick="expandirImagen(this)">
+        <div class="producto-info">
+          <h3>Falda Shorts – Tela Crepé</h3>
+          <p>Categoría: Mujer Casual</p>
+          <p>Precio: $6.00</p>
+          <button class="agregar-carrito">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección: Quiénes somos -->
+  <section id="nosotros" class="seccion oculto">
+    <h2>Quiénes somos</h2>
+    <p>Somos una tienda de moda, maquillaje y accesorios para mujeres fundada en 2025 por <strong>Lissette Ramírez</strong>. Enfocadas en brindar a nuestras clientas los mejores productos y servicios para que se sientan seguras y hermosas.</p>
+    <h3>Nuestra historia</h3>
+    <p>Nuestra historia comenzó en 2025, cuando Lissette Ramírez decidió crear un espacio donde las mujeres pudieran encontrar todo lo que necesitan para sentirse únicas.</p>
+    <h3>Nuestra visión</h3>
+    <p>Nos visualizamos como líderes en la industria de la moda y maquillaje, ofreciendo productos de alta calidad y estilo.</p>
+  </section>
+
+  <!-- Sección: Mujer Afro -->
+  <section id="mujer-afro" class="seccion oculto">
+    <h2>Mujer Afro</h2>
+    <p>Próximamente encontrarás nuestra colección dedicada a la belleza y cultura afrodescendiente.</p>
+  </section>
+
+  <!-- Sección: Contacto -->
+  <section id="contacto" class="seccion oculto">
+    <h2>Contáctanos</h2>
+    <p>Para consultas y pedidos, contáctanos vía WhatsApp o Instagram.</p>
+  </section>
+
+  <!-- Modal de imagen -->
+  <div id="modal" class="modal" onclick="cerrarImagen()">
+    <span class="cerrar">&times;</span>
+    <img class="modal-contenido" id="imgModal">
   </div>
 
   <script src="script.js"></script>
