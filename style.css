@@ -289,3 +289,56 @@ nav a:hover {
   font-size: 1.8rem;
   color: #e91e63;
 }
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-image: url('imagenes/fondo.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.pantalla-bienvenida {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000d0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.pantalla-bienvenida img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #fff;
+}
+
+.pantalla-bienvenida button {
+  margin-top: 30px;
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pantalla-bienvenida button:hover {
+  background-color: #ddd;
+}
+
+.oculto {
+  display: none;
+}
+
+.seccion {
+  padding: 40px 20px;
+}
