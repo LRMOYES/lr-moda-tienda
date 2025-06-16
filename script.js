@@ -1,67 +1,32 @@
-const products = [
-  { name: "Conjunto Deportivo Mujer", price: 39.99 },
-  { name: "Sudadera Unisex", price: 29.99 },
-  { name: "Top Elegante Mujer", price: 24.99 }
-];
-
-const productContainer = document.getElementById("product-container");
-const cartItems = document.getElementById("cart-items");
-const cartTotal = document.getElementById("cart-total");
-let total = 0;
-
-products.forEach((product) => {
-  const div = document.createElement("div");
-  div.className = "product";
-  div.innerHTML = `
-    <h4>${product.name}</h4>
-    <p>$${product.price}</p>
-    <button onclick="addToCart(${product.price})">Agregar al carrito</button>
-  `;
-  productContainer.appendChild(div);
-});
-
-function addToCart(price) {
-  const item = document.createElement("li");
-  item.textContent = $${price};
-  cartItems.appendChild(item);
-  total += price;
-  cartTotal.textContent = total.toFixed(2);
+function entrarSitio() {
+  document.getElementById("pantalla-bienvenida").style.display = "none";
+  document.getElementById("contenido-sitio").classList.remove("oculto");
+  mostrarSeccion("inicio"); // muestra sección de inicio al entrar
 }
 
-<script>
-  let carrito = [];
-  const listaCarrito = document.getElementById("lista-carrito");
-  const totalElement = document.getElementById("total");
+function mostrarSeccion(id) {
+  const secciones = document.querySelectorAll(".seccion");
+  secciones.forEach(sec => sec.classList.add("oculto"));
+  document.getElementById(id).classList.remove("oculto");
+}
 
-  document.querySelectorAll(".agregar-carrito").forEach(btn => {
-    btn.addEventListener("click", function () {
-      const producto = this.closest(".producto");
-      const nombre = producto.querySelector("h3").innerText;
-      const precio = parseFloat(producto.querySelector("p:nth-of-type(2)").innerText.replace("Precio: $", ""));
-      carrito.push({ nombre, precio });
-      actualizarCarrito();
-    });
-  });
+function vaciarCarrito() {
+  document.getElementById("lista-carrito").innerHTML = "";
+  document.getElementById("total").innerText = "0.00";
+}
 
-  function actualizarCarrito() {
-    listaCarrito.innerHTML = "";
-    let total = 0;
-    carrito.forEach((item, index) => {
-      total += item.precio;
-      const li = document.createElement("li");
-      li.innerHTML = ${item.nombre} - $${item.precio.toFixed(2)} <button onclick="eliminarDelCarrito(${index})">Eliminar</button>;
-      listaCarrito.appendChild(li);
-    });
-    totalElement.innerText = total.toFixed(2);
-  }
-
-  function eliminarDelCarrito(indice) {
-    carrito.splice(indice, 1);
-    actualizarCarrito();
-  }
-
-  function vaciarCarrito() {
-    carrito = [];
-    actualizarCarrito();
-  }
-</script>
+// Carrusel
+let indice = 0;
+const imagenes = document.querySelectorAll(".carousel img");
+const mostrarImagen = (n) => {
+  imagenes.forEach(img => img.classList.remove("active"));
+  imagenes[n].classList.add("active");
+};
+document.querySelector(".next").onclick = () => {
+  indice = (indice + 1) % imagenes.length;
+  mostrarImagen(indice);
+};
+document.querySelector(".prev").onclick = () => {
+  indice = (indice - 1 + imagenes.length) % imagenes.length;
+  mostrarImagen(indice);
+};
