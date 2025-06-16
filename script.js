@@ -1,21 +1,19 @@
-function entrarSitio() {
-  document.getElementById("pantalla-bienvenida").style.display = "none";
-  document.getElementById("contenido-sitio").classList.remove("oculto");
-  mostrarSeccion("inicio"); // muestra sección de inicio al entrar
+function cerrarBienvenida() {
+  const bienvenida = document.getElementById("pantalla-bienvenida");
+  bienvenida.style.display = "none";
 }
 
 function mostrarSeccion(id) {
   const secciones = document.querySelectorAll(".seccion");
   secciones.forEach(sec => sec.classList.add("oculto"));
-  document.getElementById(id).classList.remove("oculto");
+  const activa = document.getElementById(id);
+  if (activa) {
+    activa.classList.remove("oculto");
+    window.scrollTo(0, 0);
+  }
 }
 
-function vaciarCarrito() {
-  document.getElementById("lista-carrito").innerHTML = "";
-  document.getElementById("total").innerText = "0.00";
-}
-
-// Carrusel
+// Carrusel funcional
 let indice = 0;
 const imagenes = document.querySelectorAll(".carousel img");
 const mostrarImagen = (n) => {
@@ -30,3 +28,14 @@ document.querySelector(".prev").onclick = () => {
   indice = (indice - 1 + imagenes.length) % imagenes.length;
   mostrarImagen(indice);
 };
+
+// Modal de imagen
+function expandirImagen(img) {
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("imgModal");
+  modal.style.display = "block";
+  modalImg.src = img.src;
+}
+function cerrarImagen() {
+  document.getElementById("modal").style.display = "none";
+}
