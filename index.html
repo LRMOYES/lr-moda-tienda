@@ -37,9 +37,9 @@
   <!-- Sección: Inicio -->
   <section id="inicio" class="seccion">
     <div class="carousel">
-      <img src="imagenes/carrusel1.png" class="active" alt="Carrusel 1">
-      <img src="imagenes/carrusel2.png" alt="Carrusel 2">
-      <img src="imagenes/carrusel3.png" alt="Carrusel 3">
+      <img src="imagenes/carrusel1.png" class="active" alt="Carrusel 1" />
+      <img src="imagenes/carrusel2.png" alt="Carrusel 2" />
+      <img src="imagenes/carrusel3.png" alt="Carrusel 3" />
       <button class="prev">&#10094;</button>
       <button class="next">&#10095;</button>
     </div>
@@ -49,9 +49,9 @@
   <section id="productos" class="seccion oculto">
     <h2>Nuestros Productos</h2>
     <div class="grid-productos">
-      <!-- Repite este bloque para más productos -->
+
       <div class="producto">
-        <img src="imagenes/falda-short-tela-crepe.png" alt="Falda Shorts Crepé" onclick="expandirImagen(this)">
+        <img src="imagenes/falda-short-tela-crepe.png" alt="Falda Shorts Crepé" onclick="expandirImagen(this)" />
         <div class="producto-info">
           <h3>Falda Shorts – Tela Crepé</h3>
           <p>Categoría: Mujer Casual</p>
@@ -59,6 +59,87 @@
           <button class="agregar-carrito">Agregar al carrito</button>
         </div>
       </div>
+
+      <div class="producto">
+        <img src="imagenes/shorts-tela-crepe.png" alt="Shorts Crepé" onclick="expandirImagen(this)" />
+        <div class="producto-info">
+          <h3>Shorts – Tela Crepé</h3>
+          <p>Categoría: Mujer Casual</p>
+          <p>Precio: $5.00</p>
+          <button class="agregar-carrito">Agregar al carrito</button>
+        </div>
+      </div>
+
+      <div class="producto">
+        <img src="imagenes/falda-shorts-cintura-alta.png" alt="Falda Shorts Cintura Alta" onclick="expandirImagen(this)" />
+        <div class="producto-info">
+          <h3>Falda Shorts – Cintura Alta</h3>
+          <p>Categoría: Mujer Line Sexy</p>
+          <p>Precio: $18.00</p>
+          <button class="agregar-carrito">Agregar al carrito</button>
+        </div>
+      </div>
+
+      <div class="producto">
+        <img src="imagenes/shorts-tela-lino.png" alt="Shorts Lino" onclick="expandirImagen(this)" />
+        <div class="producto-info">
+          <h3>Shorts – Tela Lino</h3>
+          <p>Categoría: Mujer Line Sexy</p>
+          <p>Precio: $20.00</p>
+          <button class="agregar-carrito">Agregar al carrito</button>
+        </div>
+      </div>
+
+      <div class="producto">
+        <img src="imagenes/shorts-cintura-baja.png" alt="Shorts Cintura Baja" onclick="expandirImagen(this)" />
+        <div class="producto-info">
+          <h3>Shorts – Cintura Baja</h3>
+          <p>Categoría: Mujer Casual</p>
+          <p>Precio: $4.50</p>
+          <button class="agregar-carrito">Agregar al carrito</button>
+        </div>
+      </div>
+
+      <div class="producto">
+        <img src="imagenes/shorts-bolsillo-ancho.png" alt="Shorts Bolsillo Ancho" onclick="expandirImagen(this)" />
+        <div class="producto-info">
+          <h3>Shorts – Bolsillo Ancho</h3>
+          <p>Categoría: Mujer Casual</p>
+          <p>Precio: $12.00</p>
+          <button class="agregar-carrito">Agregar al carrito</button>
+        </div>
+      </div>
+
+      <div class="producto">
+        <img src="imagenes/shorts-estilo-cargo.png" alt="Shorts Cargo" onclick="expandirImagen(this)" />
+        <div class="producto-info">
+          <h3>Shorts – Estilo Cargo</h3>
+          <p>Categoría: Mujer Line Sexy</p>
+          <p>Precio: $12.00</p>
+          <button class="agregar-carrito">Agregar al carrito</button>
+        </div>
+      </div>
+
+      <div class="producto">
+        <img src="imagenes/shorts-de-vestir.png" alt="Shorts de Vestir" onclick="expandirImagen(this)" />
+        <div class="producto-info">
+          <h3>Shorts de Vestir</h3>
+          <p>Categoría: Mujer Casual</p>
+          <p>Precio: $12.00</p>
+          <button class="agregar-carrito">Agregar al carrito</button>
+        </div>
+      </div>
+
+      <div class="producto">
+        <img src="imagenes/shorts-estilo-love.png" alt="Shorts Love" onclick="expandirImagen(this)" />
+        <div class="producto-info">
+          <h3>Shorts – Estilo Love</h3>
+          <p>Categoría: Mujer Casual</p>
+          <p>Precio: $10.00</p>
+          <button class="agregar-carrito">Agregar al carrito</button>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -87,7 +168,7 @@
   <!-- Modal de imagen -->
   <div id="modal" class="modal" onclick="cerrarImagen()">
     <span class="cerrar">&times;</span>
-    <img class="modal-contenido" id="imgModal">
+    <img class="modal-contenido" id="imgModal" />
   </div>
 
   <script src="script.js"></script>
