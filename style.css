@@ -58,7 +58,7 @@ header h1 {
 nav {
   display: flex;
   justify-content: center;
-  background-color: #080506;
+  background-color: #000000;
   padding: 12px 0;
   gap: 30px;
   flex-wrap: wrap;
@@ -73,7 +73,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #ffe3f1;
+  color: #ff4081;
 }
 
 /* Carrusel */
