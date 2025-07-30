@@ -39,3 +39,28 @@ function expandirImagen(img) {
 function cerrarImagen() {
   document.getElementById("modal").style.display = "none";
 }
+
+// 🔊 Función para controlar la música de fondo
+function toggleAudio() {
+  const audio = document.getElementById("musicaFondo");
+  const boton = document.getElementById("botonAudio");
+  
+  if (audio.paused) {
+    audio.play();
+    boton.innerText = "🔊";
+  } else {
+    audio.pause();
+    boton.innerText = "🔇";
+  }
+}
+
+// Reproducción automática al cargar (opcional, puede requerir interacción del usuario)
+window.addEventListener('load', () => {
+  const audio = document.getElementById("musicaFondo");
+  if (audio) {
+    audio.volume = 0.5; // volumen inicial (opcional)
+    audio.play().catch(() => {
+      // El navegador bloqueó la reproducción automática
+    });
+  }
+});
