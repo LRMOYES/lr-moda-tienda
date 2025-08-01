@@ -13,22 +13,6 @@ function mostrarSeccion(id) {
   }
 }
 
-// Carrusel funcional
-let indice = 0;
-const imagenes = document.querySelectorAll(".carousel img");
-const mostrarImagen = (n) => {
-  imagenes.forEach(img => img.classList.remove("active"));
-  imagenes[n].classList.add("active");
-};
-document.querySelector(".next").onclick = () => {
-  indice = (indice + 1) % imagenes.length;
-  mostrarImagen(indice);
-};
-document.querySelector(".prev").onclick = () => {
-  indice = (indice - 1 + imagenes.length) % imagenes.length;
-  mostrarImagen(indice);
-};
-
 // Modal de imagen
 function expandirImagen(img) {
   const modal = document.getElementById("modal");
@@ -54,13 +38,37 @@ function toggleAudio() {
   }
 }
 
-// Reproducción automática al cargar (opcional, puede requerir interacción del usuario)
-window.addEventListener('load', () => {
+// Esperar que todo el DOM esté cargado
+window.addEventListener('DOMContentLoaded', () => {
+  // Carrusel funcional
+  let indice = 0;
+  const imagenes = document.querySelectorAll(".carousel img");
+  const mostrarImagen = (n) => {
+    imagenes.forEach(img => img.classList.remove("active"));
+    imagenes[n].classList.add("active");
+  };
+
+  const btnNext = document.querySelector(".next");
+  const btnPrev = document.querySelector(".prev");
+
+  if (btnNext && btnPrev && imagenes.length > 0) {
+    mostrarImagen(indice); // Mostrar primera imagen
+    btnNext.addEventListener("click", () => {
+      indice = (indice + 1) % imagenes.length;
+      mostrarImagen(indice);
+    });
+    btnPrev.addEventListener("click", () => {
+      indice = (indice - 1 + imagenes.length) % imagenes.length;
+      mostrarImagen(indice);
+    });
+  }
+
+  // Música de fondo
   const audio = document.getElementById("musicaFondo");
   if (audio) {
-    audio.volume = 0.5; // volumen inicial (opcional)
+    audio.volume = 0.5;
     audio.play().catch(() => {
-      // El navegador bloqueó la reproducción automática
+      // El navegador puede bloquear la reproducción automática
     });
   }
 });
