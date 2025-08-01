@@ -109,7 +109,7 @@ nav a:hover {
   width: 25%;
   max-height: 50%;
   overflow: hidden;
-  position: center;
+  position: relative;
   background-color: #000;
   display: flex;
   justify-content: center;
