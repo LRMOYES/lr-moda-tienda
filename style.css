@@ -106,10 +106,10 @@ nav a:hover {
 
 /* Carrusel */
 .carousel {
-  width: 50%;
+  width: 30%;
   max-height: 50%;
   overflow: hidden;
-  position: relative;
+  position: center;
   background-color: #000;
   display: flex;
   justify-content: center;
