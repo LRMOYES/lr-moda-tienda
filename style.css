@@ -105,39 +105,41 @@ nav a:hover {
 }
 
 /* Carrusel */
-.carrusel {
+.carousel {
   width: 100%;
   max-height: 400px;
   overflow: hidden;
+  position: relative;
+  background-color: #000;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #000;
-  position: relative;
 }
-.carrusel img {
+.carousel img {
+  display: none;
   width: 100%;
   max-height: 400px;
   object-fit: cover;
-  display: none;
 }
-.carrusel img.active {
+.carousel img.active {
   display: block;
 }
 .prev, .next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: white;
   background-color: rgba(0,0,0,0.4);
-  padding: 10px;
+  padding: 10px 15px;
   cursor: pointer;
   z-index: 10;
   user-select: none;
+  border-radius: 50%;
+  border: none;
 }
-.prev { left: 20px; }
-.next { right: 20px; }
+.prev { left: 15px; }
+.next { right: 15px; }
 
 /* Productos */
 .productos {
