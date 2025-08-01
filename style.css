@@ -110,7 +110,6 @@ nav a:hover {
   height: 400px;
   object-fit: contain; /* mantiene proporción, ajusta la imagen dentro sin recortar */
   display: none;
-  justify-content: center;
   align-items: center;
 }
 .carousel img {
