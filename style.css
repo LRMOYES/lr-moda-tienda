@@ -107,7 +107,7 @@ nav a:hover {
 /* Carrusel */
 .carousel {
   width: 100%;
-  max-height: 100%;
+  max-height: 50%;
   overflow: hidden;
   position: relative;
   background-color: #000;
