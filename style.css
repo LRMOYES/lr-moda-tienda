@@ -105,13 +105,11 @@ nav a:hover {
 }
 
 /* Carrusel */
-.carousel {
+.carousel img {
   width: 100%;
-  max-height: 400px;
-  overflow: hidden;
-  position: relative;
-  background-color: #000;
-  display: flex;
+  height: 400px;
+  object-fit: contain; /* mantiene proporción, ajusta la imagen dentro sin recortar */
+  display: none;
   justify-content: center;
   align-items: center;
 }
